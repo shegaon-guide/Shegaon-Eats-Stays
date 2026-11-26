@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Details | Shegaon Eats & Stays</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="details.css">
+</head>
+<body class="details-page">
+  <header class="details-header"><a class="brand" href="index.html"><span class="brand-mark">S<span>✦</span></span><span class="brand-copy">SHEGAON<span>eats & stays</span></span></a><a class="back-link" href="index.html">← Back to home</a></header>
+  <main class="details-wrap">
+    <a class="back-link mobile-back" href="index.html">← Back to listings</a>
+    <div id="placeDetails" class="place-details">
+      <p>Loading place details...</p>
+    </div>
+
+    <section class="review-section">
+      <div class="review-heading">
+        <div class="eyebrow dark-eyebrow">CUSTOMER FEEDBACK</div>
+        <h2>Rate this place</h2>
+        <p>Share a helpful review about your visit.</p>
+      </div>
+      <p class="review-intro">Apna naam, rating aur experience likhkar review submit karein.</p>
+      <form id="reviewForm" class="review-form">
+        <label for="reviewName">Your name</label>
+        <input type="text" id="reviewName" maxlength="40" placeholder="Enter your name" required>
+
+        <label for="reviewRating">Your rating</label>
+        <select id="reviewRating" required>
+          <option value="">Select rating</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Good</option>
+          <option value="3">3 - Average</option>
+          <option value="2">2 - Poor</option>
+          <option value="1">1 - Very poor</option>
+        </select>
+
+        <label for="reviewText">Your review</label>
+        <textarea id="reviewText" rows="4" maxlength="400" placeholder="Write your experience..." required></textarea>
+        <button type="submit" class="detail-action map-action">Submit review</button>
+        <p class="review-message" id="reviewMessage"></p>
+      </form>
+      <div class="saved-reviews">
+        <h3>Customer reviews</h3>
+        <div id="reviewList"><p class="no-reviews">No reviews added yet.</p></div>
+      </div>
+      
+    </section>
+
+    <section class="report-shortcut-wrap" aria-label="Report an issue">
+      <button type="button" class="report-shortcut" id="reportToggle" aria-expanded="false" aria-controls="reportPanel">
+        <span class="report-shortcut-icon" aria-hidden="true">⚑</span>
+        <span>Report</span>
+      </button>
+    </section>
+
+    <section class="review-section report-section" id="reportPanel" hidden>
+      <div class="review-heading">
+        <div class="eyebrow dark-eyebrow">CUSTOMER COMPLAINT</div>
+        <h2>Report a food or service issue</h2>
+        <p>Use this form to report a concern about food quality, hygiene or service at this place.</p>
+      </div>
+      <form id="reportForm" class="review-form" enctype="multipart/form-data">
+        <label for="reportName">Full name *</label>
+        <input type="text" id="reportName" maxlength="100" autocomplete="name" placeholder="Enter your full name" required>
+
+        <label for="reportMobile">Mobile number *</label>
+        <input type="tel" id="reportMobile" maxlength="20" autocomplete="tel" placeholder="Enter your mobile number" required>
+
+        <label for="reportEmail">Email address *</label>
+        <input type="email" id="reportEmail" maxlength="254" autocomplete="email" placeholder="Enter your email address" required>
+
+        <label for="reportPlace">Restaurant / Hotel</label>
+        <input type="text" id="reportPlace" readonly>
+
+        <label for="reportProblem">Describe the problem *</label>
+        <textarea id="reportProblem" rows="5" maxlength="3000" placeholder="Explain what happened, including relevant details..." required></textarea>
+
+        <label for="reportPhoto">Attach photo (optional)</label>
+        <input type="file" id="reportPhoto" accept="image/*">
+
+        <label for="reportVideo">Attach video (optional)</label>
+        <input type="file" id="reportVideo" accept="video/*">
+        
+
+        <button type="submit" class="detail-action map-action" id="reportSubmit">Submit report</button>
+        <p class="review-message" id="reportMessage" aria-live="polite"></p>
+      </form>
+      
+    </section>
+
+    <p class="details-note">Photos are illustrative and may not show the actual business. Public listing details can change; please confirm before visiting.</p>
+  </main>
+  <script src="places.js"></script>
+  <script src="details.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Shegaon Eats & Stays</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="topbar"><a href="index.html">← Shegaon Eats & Stays</a><span>ADMIN DASHBOARD</span></header>
+  <main class="wrap">
+    <section class="panel login-panel" id="loginPanel">
+      <p class="eyebrow">PRIVATE ACCESS</p><h1>Admin login</h1>
+      <form id="loginForm"><label>Username</label><input type="text" id="adminUsername" required minlength="3" maxlength="30" pattern="[A-Za-z0-9._-]+" autocomplete="username"><label>Password</label><input type="password" id="adminPassword" required autocomplete="current-password"><button type="submit" id="loginButton">Sign in</button></form>
+    </section>
+    <section id="dashboardPanel" hidden>
+      <div class="heading"><div><p class="eyebrow">CONTROL CENTER</p><h1>Dashboard</h1><p id="accountRole" class="hint"></p><p>Review customer feedback and manage incoming complaints.</p></div><button class="secondary" id="logoutButton">Sign out</button></div>
+      <div class="stats"><article class="stat"><span>Total reviews</span><b id="reviewCount">—</b></article><article class="stat"><span>Total complaints</span><b id="reportCount">—</b></article><article class="stat"><span>Pending complaints</span><b id="pendingCount">—</b></article></div>
+      <section class="panel"><div class="section-head"><h2>Customer complaints</h2><button class="secondary" id="refreshButton">Refresh</button></div><p class="hint">Customer contact details are private and visible only to authorized admins.</p><div id="reportsList"><p>Loading complaints…</p></div></section>
+      <section class="panel"><h2>Customer reviews</h2><div id="reviewsList"><p>Loading reviews…</p></div></section>
+
+
+      <section class="panel" id="teamPanel" hidden>
+        <div class="section-head"><h2>Admin team (Group Leader only)</h2></div>
+        <p class="hint">Invite a person by email. The invitation link and applications are private to the Group Leader.</p>
+        <form id="inviteForm" class="team-form">
+          <label for="inviteEmail">Candidate email</label>
+          <input id="inviteEmail" type="email" required maxlength="254" placeholder="candidate@example.com">
+          <button type="submit">Create invitation</button>
+          <p class="message" id="inviteMessage"></p>
+        </form>
+        <div id="inviteResult" class="hint"></div>
+        <h3>Applications</h3>
+        <div id="applicationsList"><p class="empty">Loading applications…</p></div>
+      </section>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body></html>

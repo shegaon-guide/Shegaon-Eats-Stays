@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Application | Shegaon Eats & Stays</title><link rel="stylesheet" href="admin.css"></head>
+<body><header class="topbar"><a href="index.html">← Shegaon Eats & Stays</a><span>ADMIN APPLICATION</span></header>
+<main class="wrap"><section class="panel login-panel"><p class="eyebrow">PRIVATE INVITATION</p><h1>Apply to join the admin team</h1>
+
+<form id="applicationForm" class="team-form">
+<label>Full name</label><input id="fullName" required maxlength="100">
+<label>Invited email</label><input id="email" type="email" required maxlength="254">
+<label>Preferred username</label><input id="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9._-]+" autocomplete="username">
+<label>Why would you like to join?</label><textarea id="reason" required minlength="10" maxlength="1500" rows="5"></textarea>
+<button id="submitApplication" type="submit">Submit application</button><p class="message" id="applicationMessage"></p>
+
+</form></section></main>
+<script src="apply-admin.js"></script></body></html>
